@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/columncontainer.tsx","./src/components/configuretodo.tsx","./src/components/snackbar.tsx","./src/components/taskcard.tsx","./src/components/workspacearea.tsx","./src/constants/constants.ts","./src/types/type.ts"],"version":"5.6.2"}

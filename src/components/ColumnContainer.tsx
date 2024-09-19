@@ -85,9 +85,11 @@ const ColumnContainer = (props: Section) => {
                   // containerRef={containerRef}
                   handleDragStart={handleDragStart}
                   handleDragEnd={handleDragEnd}
+                  // @ts-ignore
                   swapCard={swapCard}
                   key={card.id}
                   color={sectionColor}
+                  // @ts-ignore
                   handleCloseCb={props.handleCloseCb}
                   {...card}
                 ></TaskCard>

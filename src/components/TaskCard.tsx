@@ -30,7 +30,7 @@ const TaskCard = ({
   handleCloseCb: Function;
   swapCard: Function;
 }) => {
-  const [isDragging, setIsDragging] = useState(false);
+  const isDragging = false;
   const [isHovering, setIsHovering] = useState(false);
   const [openDialog, setOpenDialog] = useState(false);
   const [selectedCard, setSelectedCard] = useState(null);
