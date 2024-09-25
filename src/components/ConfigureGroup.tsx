@@ -107,51 +107,40 @@ export default function ConfigureGroup({
         </DialogTitle>
         <DialogContent>
           <div style={{ overflowX: "hidden" }}>
-            <motion.div
-              whileInView={{ opacity: 1, x: 0 }}
-              initial={{ opacity: 0, x: -100 }}
-              transition={{ duration: 1, delay: 0.5 }}
-            >
-              <TextField
+            <TextField
+              onChange={handleChange}
+              value={formValues.content}
+              required
+              margin="dense"
+              id="title"
+              name="title"
+              label="Title"
+              type="text"
+              fullWidth
+              variant="standard"
+              placeholder="Enter title"
+            />
+
+            <>
+              <InputLabel required>Size</InputLabel>
+              <Select
+                labelId="size-label"
+                id="size"
+                name="size"
+                value={formValues.size}
                 onChange={handleChange}
-                value={formValues.content}
-                required
-                margin="dense"
-                id="title"
-                name="title"
-                label="Title"
-                type="text"
-                fullWidth
                 variant="standard"
-                placeholder="Enter title"
-              />
-            </motion.div>
-            <motion.div
-              whileInView={{ opacity: 1, x: 0 }}
-              initial={{ opacity: 0, x: 100 }}
-              transition={{ duration: 1, delay: 0.5 }}
-            >
-              <>
-                <InputLabel required>Size</InputLabel>
-                <Select
-                  labelId="size-label"
-                  id="size"
-                  name="size"
-                  value={formValues.size}
-                  onChange={handleChange}
-                  variant="standard"
-                  fullWidth
-                >
-                  {sizeOptions.map((option) => {
-                    return (
-                      <MenuItem key={option.title} value={option.value}>
-                        {option.value}
-                      </MenuItem>
-                    );
-                  })}
-                </Select>
-              </>
-            </motion.div>
+                fullWidth
+              >
+                {sizeOptions.map((option) => {
+                  return (
+                    <MenuItem key={option.title} value={option.value}>
+                      {option.value}
+                    </MenuItem>
+                  );
+                })}
+              </Select>
+            </>
           </div>
         </DialogContent>
         <DialogActions>

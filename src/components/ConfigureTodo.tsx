@@ -161,89 +161,51 @@ export default function TodoCard({
           </DialogTitle>
           <DialogContent>
             <div style={{ overflowX: "hidden" }}>
-              <motion.div
-                whileInView={{ opacity: 1, x: 0 }}
-                initial={{ opacity: 0, x: -100 }}
-                transition={{ duration: 1, delay: 0.5 }}
-              >
-                <TextField
-                  onChange={handleChange}
-                  value={formValues.content}
-                  required
-                  margin="dense"
-                  id="description"
-                  name="content"
-                  label="Description"
-                  type="text"
-                  fullWidth
-                  variant="standard"
-                  placeholder="Enter task description"
-                  multiline
-                />
-              </motion.div>
-              <motion.div
-                whileInView={{ opacity: 1, x: 0 }}
-                initial={{ opacity: 0, x: 100 }}
-                transition={{ duration: 1, delay: 0.5 }}
-              >
-                <>
-                  <InputLabel required>Group</InputLabel>
-                  <Select
-                    labelId="section-label"
-                    id="section"
-                    name="section"
-                    value={formValues.section}
-                    variant="standard"
-                    fullWidth
-                  >
-                    {sections.map((section: any) => {
-                      return (
-                        <MenuItem
-                          key={section.sectionName}
-                          value={section.sectionId}
-                          onClick={() => handleSectionSelection(section)}
-                          style={
-                            {
-                              // backgroundColor: section.color,
-                              // fontWeight: "bold",
-                              // opacity: "80%",
-                            }
-                          }
-                        >
-                          {section.sectionName}
-                        </MenuItem>
-                      );
-                    })}
-                  </Select>
-                </>
-                {/* <>
-                <InputLabel required id="Avatar-label">
-                  Pick Avatar
-                </InputLabel>
+              <TextField
+                onChange={handleChange}
+                value={formValues.content}
+                required
+                margin="dense"
+                id="description"
+                name="content"
+                label="Description"
+                type="text"
+                fullWidth
+                variant="standard"
+                placeholder="Enter task description"
+                multiline
+              />
+
+              <>
+                <InputLabel required>Group</InputLabel>
                 <Select
-                  labelId="Avatar-label"
-                  id="pick-avatar"
-                  name="avatar"
-                  value={formValues.avatar}
-                  onChange={handleChange}
+                  labelId="section-label"
+                  id="section"
+                  name="section"
+                  value={formValues.section}
                   variant="standard"
                   fullWidth
                 >
-                  {AvatarLookups.filter(
-                    (ele) => ele.category === formValues.section
-                  ).map((avatar) => (
-                    <MenuItem key={avatar.name} value={avatar.img}>
-                      <img
-                        alt={avatar.name}
-                        src={avatar.img}
-                        style={{ width: 24, height: 24, marginRight: 8 }}
-                      />
-                      {avatar.name}
-                    </MenuItem>
-                  ))}
+                  {sections.map((section: any) => {
+                    return (
+                      <MenuItem
+                        key={section.sectionName}
+                        value={section.sectionId}
+                        onClick={() => handleSectionSelection(section)}
+                        style={
+                          {
+                            // backgroundColor: section.color,
+                            // fontWeight: "bold",
+                            // opacity: "80%",
+                          }
+                        }
+                      >
+                        {section.sectionName}
+                      </MenuItem>
+                    );
+                  })}
                 </Select>
-              </> */}
-              </motion.div>
+              </>
             </div>
           </DialogContent>
           <DialogActions>
